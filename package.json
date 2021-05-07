@@ -1,0 +1,26 @@
+{
+    "name": "@harnessflex/schema-builder",
+    "version": "0.0.1",
+    "description": "A Eloquent inspired schema builder for Harness Flex and DB Migrate.",
+    "main": "src/index.js",
+    "module": "src/index.js",
+    "repository": "github:harnessflex/schema-builder",
+    "keywords": [
+        "harness",
+        "harness flex",
+        "db-migrate",
+        "sql",
+        "migration",
+        "migration-builder",
+        "schema-builder",
+        "eloquent"
+    ],
+    "files": [
+        "src"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Donald Pakkies <donaldpakkies@gmail.com>",
+    "license": "MIT"
+}
