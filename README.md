@@ -14,7 +14,7 @@ npm i @harnessflex/schema-builder
 Basic Usage
 -----------
 
-Schema Builder works both on `imba` based projects and `JavaScript` based projects.
+Schema Builder works on both `imba` based projects and `JavaScript` based projects.
 
 ### Harness Flex
 
