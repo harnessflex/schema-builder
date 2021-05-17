@@ -69,6 +69,7 @@ Column         | Params                      | Type
 `longText`     | `name: string`              | `Column`
 `real`         | `name: string`              | `Column`
 `smallInteger` | `name: string`              | `Column`
+`softDeletes`  |                             | `Column`
 `string`       | `name: string`              | `Column`
 `text`         | `name: string`              | `Column`
 `time`         | `name: string`              | `Column`
