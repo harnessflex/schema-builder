@@ -12,6 +12,7 @@ const integer = require('./defaults/integer')
 const longText = require('./defaults/longText')
 const real = require('./defaults/real')
 const smallInteger = require('./defaults/smallInteger')
+const softDeletes = require('./defaults/softDeletes')
 const string = require('./defaults/string')
 const text = require('./defaults/text')
 const time = require('./defaults/time')
@@ -40,6 +41,7 @@ module.exports = {
 	longText,
 	real,
 	smallInteger,
+    softDeletes,
 	string,
 	text,
 	time,
