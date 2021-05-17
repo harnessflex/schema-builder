@@ -78,7 +78,7 @@ class ForeignColumn {
 			throw new Error('Foreign key table name is not set.')
 		}
 
-		this.column.object.foreignKey.name = `${tableName}_variant_${columnName}_fk`
+		this.column.object.foreignKey.name = `${tableName}_${columnName}_fk`
 
 		return {
 			[this.column.name]: this.column.object
