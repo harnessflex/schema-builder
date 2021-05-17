@@ -147,6 +147,22 @@ db.createTable('users', columns([
 ]))
 ```
 
+Example
+-------
+
+Before running the example project, edit the `database.json` config file located under the `example` folder.
+
+Once done, run the following command:
+
+```bash
+db-migrate up -m=example/migrations
+```
+
+This command will create 2 new tables named `users` and `posts` in your database.
+
+
+> Note: `db-migrate` and `db-migrate-mysql` must be installed globally.
+
 Security
 -------
 
