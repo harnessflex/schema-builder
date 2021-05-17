@@ -153,7 +153,7 @@ Example
 
 Before running the example project, edit the `database.json` config file located under the `example` folder.
 
-Once done, run the following command:
+When done, run the following command:
 
 ```bash
 db-migrate up -m=example/migrations
