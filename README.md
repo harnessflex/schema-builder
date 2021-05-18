@@ -194,7 +194,7 @@ db.createTable 'users', columns [
 :---------------|:----------------------|:-----------------------------
 `where`         | `string: table`       | Set table name.
 `whereTable`    | `string: table`       | Set table name.
-`using`         | `object: db`          | Add column and return db-migrate db instance.
+`using`         | `object: db`          | Add/change column and return db-migrate db instance.
 
 <br/>
 

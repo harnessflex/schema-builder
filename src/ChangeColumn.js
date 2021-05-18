@@ -38,7 +38,7 @@ class ChangeColumn {
     }
 
     /**
-     * Add column and return db-migrate db instance.
+     * Add/change column and return db-migrate db instance.
      *
      * @param {object} db
      */
