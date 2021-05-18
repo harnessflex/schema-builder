@@ -63,6 +63,39 @@ exports.up = do(db)
 	]
 ```
 
+Modifying Tables
+----------------
+
+To add a new `column` to an existing table, use the `add` helper method:
+
+```js
+const { string, add } = require('@harnessflex/schema-builder')
+
+...
+
+exports.up = function (db) {
+    return add( string('api_key').nullable().after('password') )
+        .where('users')
+        .using(db)
+};
+```
+
+And to change a column in an existing table, use the `change` helper method:
+
+```js
+const { change, longText } = require('@harnessflex/schema-builder')
+
+...
+
+exports.up = function (db) {
+    return change( longText('api_key').nullable() )
+        .where('users')
+        .using(db)
+};
+```
+
+> Both, the `add` and `change` methods, return a `ChangeColumn` instance.
+
 Columns
 -------
 
@@ -93,9 +126,11 @@ Column         | Params                      | Type            | Unique Constrai
 
 Other
 -----
-Method    | Params           | Description
-:---------|:-----------------|:-----------------------------
-`columns` | `columns: array` | A collection of columns.
+Method    | Params                         | Description
+:---------|:-------------------------------|:-----------------------------
+`add`     | `column: Column|ForeignColumn` | Add a new column to an existing table.
+`change`  | `column: Column|ForeignColumn` | Change a column in an existing table.
+`columns` | `columns: array`               | A collection of columns.
 
 <br/>
 
@@ -125,6 +160,7 @@ foreign('user_id').references('id').on('users').onDelete('cascade')
 
  Method         | Params                | Description
 :---------------|:----------------------|:-----------------------------
+`after`         | `string: column`      | Add column after another column.
 `length`        | `length: integer`     | Set column length.
 `primary`       | `primary: boolean`    | Set column as primary key.
 `autoIncrement` | `increment: boolean`  | Add auto increment attribute.
@@ -132,6 +168,14 @@ foreign('user_id').references('id').on('users').onDelete('cascade')
 `unique`        | `isUnique: boolean`   | Mark column unique.
 `unsigned`      | `isUnsigned: boolean` | Mark column unsigned.
 `default`       | `value: mixed`        | Set column default value.
+
+### ChangeColumn
+
+ Method         | Params                | Description
+:---------------|:----------------------|:-----------------------------
+`where`         | `string: table`       | Set table name.
+`whereTable`    | `string: table`       | Set table name.
+`using`         | `object: db`          | Add column and return db-migrate db instance.
 
 <br/>
 
