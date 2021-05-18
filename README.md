@@ -126,11 +126,11 @@ Column         | Params                      | Type            | Unique Constrai
 
 Other
 -----
-Method    | Params                         | Description
-:---------|:-------------------------------|:-----------------------------
-`add`     | `column: Column|ForeignColumn` | Add a new column to an existing table.
-`change`  | `column: Column|ForeignColumn` | Change a column in an existing table.
-`columns` | `columns: array`               | A collection of columns.
+Method    | Params                            | Description
+:---------|:----------------------------------|:-----------------------------
+`add`     | `column: Column or ForeignColumn` | Add a new column to an existing table.
+`change`  | `column: Column or ForeignColumn` | Change a column in an existing table.
+`columns` | `columns: array`                  | A collection of columns.
 
 <br/>
 
@@ -169,14 +169,6 @@ foreign('user_id').references('id').on('users').onDelete('cascade')
 `unsigned`      | `isUnsigned: boolean` | Mark column unsigned.
 `default`       | `value: mixed`        | Set column default value.
 
-### ChangeColumn
-
- Method         | Params                | Description
-:---------------|:----------------------|:-----------------------------
-`where`         | `string: table`       | Set table name.
-`whereTable`    | `string: table`       | Set table name.
-`using`         | `object: db`          | Add column and return db-migrate db instance.
-
 <br/>
 
 #### JavaScript
@@ -203,6 +195,32 @@ db.createTable 'users', columns [
 	timestamp('email_verified_at').nullable!
 	timetamps!
 ]
+```
+
+### ChangeColumn
+
+ Method         | Params                | Description
+:---------------|:----------------------|:-----------------------------
+`where`         | `string: table`       | Set table name.
+`whereTable`    | `string: table`       | Set table name.
+`using`         | `object: db`          | Add column and return db-migrate db instance.
+
+<br/>
+
+#### JavaScript
+
+```js
+return change( longText('api_key').nullable() )
+    .where('users')
+    .using(db)
+```
+
+#### Imba
+
+```js
+return change( longText('api_key').nullable! )
+    .where('users')
+    .using db
 ```
 
 Example (JavaScript)
