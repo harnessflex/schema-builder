@@ -20,6 +20,18 @@ class Column {
 		this.object = object
 	}
 
+    /**
+     * Add column after another column.
+     *
+     * @param {string} column column name
+     * @returns {Column}
+     */
+    after(column) {
+        this.object.after = column
+
+        return this
+    }
+
 	/**
 	 * Set column length.
 	 *
