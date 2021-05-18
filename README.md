@@ -19,16 +19,27 @@ Schema Builder works on both `JavaScript` based projects and `imba` based projec
 ### JavaScript
 
 ```js
-const { columns, foreign, id, longText, string, timestamps } = require('@harnessflex/schema-builder')
+const {
+    columns,
+    id,
+    foreign,
+    string,
+    longText,
+    timestamps,
+    softDeletes,
+    timestamp
+} = require('@harnessflex/schema-builder')
 
 exports.up = function (db) {
-	db.createTable('blogs', columns([
+	return db.createTable('posts', columns([
 		id(),
-		foreign('user_id').references('id').on('users').onDelete('cascade'),
-		foreign('category_id').references('id').on('categories'),
-		longText('body'),
-		string('tags').nullable(),
-		timestamps(),
+        foreign('user_id').references('id').on('users').onDelete('cascade'),
+        string('title'),
+        longText('body'),
+        string('slug').unique(),
+        timestamp('published_at').nullable(),
+        softDeletes(),
+        timestamps(),
 	])
 }
 ```
@@ -37,16 +48,18 @@ exports.up = function (db) {
 
 
 ```js
-const { columns, foreign, id, longText, string, timestamps } = require '@harnessflex/schema-builder'
+const { columns, id, foreign, string, longText, timestamps, softDeletes, timestamp } = require '@harnessflex/schema-builder'
 
 exports.up = do(db)
-	db.createTable 'blogs', columns [
+	db.createTable 'posts', columns [
 		id!
-		foreign('user_id').references('id').on('users').onDelete 'cascade'
-		foreign('category_id').references('id').on 'categories'
-		longText 'body'
-		string('tags').nullable!
-		timestamps!
+        foreign('user_id').references('id').on('users').onDelete 'cascade'
+        string 'title'
+        longText 'body'
+        string('slug').unique!
+        timestamp('published_at').nullable!
+        softDeletes!
+        timestamps!
 	]
 ```
 
@@ -125,7 +138,7 @@ foreign('user_id').references('id').on('users').onDelete('cascade')
 #### JavaScript
 
 ```js
-db.createTable('users', columns([
+return db.createTable('users', columns([
 	id(),
 	string('name'),
 	string('email').unique(),
