@@ -6,7 +6,6 @@ const {
     foreign,
     string,
     longText,
-    boolean,
     timestamps,
     softDeletes,
     timestamp
