@@ -53,28 +53,28 @@ exports.up = function (db, callback) {
 Columns
 -------
 
-Column         | Params                      | Type
-:--------------|:----------------------------|----------------
-`bigInteger`   | `name: string`              | `Column`
-`binary`       | `name: string`              | `Column`
-`blob`         | `name: string`              | `Column`
-`boolean`      | `name: string`              | `Column`
-`char`         | `name: string`              | `Column`
-`date`         | `name: string`              | `Column`
-`dateTime`     | `name: string`              | `Column`
-`decimal`      | `name: string`              | `Column`
-`foreign`      | `name: string`              | `ForeignColumn`
-`id`           |                             | `Column`
-`integer`      | `name: string`              | `Column`
-`longText`     | `name: string`              | `Column`
-`real`         | `name: string`              | `Column`
-`smallInteger` | `name: string`              | `Column`
-`softDeletes`  |                             | `Column`
-`string`       | `name: string`              | `Column`
-`text`         | `name: string`              | `Column`
-`time`         | `name: string`              | `Column`
-`timestamp`    | `name: string`              | `Column`
-`timestamps`   | `currentTimeStamp: boolean` | `Object`
+Column         | Params                      | Type            | Unique Constraint Support
+:--------------|:----------------------------|-----------------|:--------------------
+`bigInteger`   | `name: string`              | `Column`        | - [x]
+`binary`       | `name: string`              | `Column`        | - [x]
+`blob`         | `name: string`              | `Column`        | - [ ]
+`boolean`      | `name: string`              | `Column`        | - [x]
+`char`         | `name: string`              | `Column`        | - [x]
+`date`         | `name: string`              | `Column`        | - [x]
+`dateTime`     | `name: string`              | `Column`        | - [x]
+`decimal`      | `name: string`              | `Column`        | - [x]
+`foreign`      | `name: string`              | `ForeignColumn` | - [x]
+`id`           |                             | `Column`        | - [x]
+`integer`      | `name: string`              | `Column`        | - [x]
+`longText`     | `name: string`              | `Column`        | - [ ]
+`real`         | `name: string`              | `Column`        | - [x]
+`smallInteger` | `name: string`              | `Column`        | - [x]
+`softDeletes`  |                             | `Column`        | - [x]
+`string`       | `name: string`              | `Column`        | - [x]
+`text`         | `name: string`              | `Column`        | - [ ]
+`time`         | `name: string`              | `Column`        | - [x]
+`timestamp`    | `name: string`              | `Column`        | - [x]
+`timestamps`   | `currentTimeStamp: boolean` | `Object`        | - [x]
 
 <br/>
 
