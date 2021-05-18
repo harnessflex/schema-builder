@@ -19,20 +19,11 @@ Schema Builder works on both `JavaScript` based projects and `imba` based projec
 ### JavaScript
 
 ```js
-const {
-    columns,
-    id,
-    foreign,
-    string,
-    longText,
-    timestamps,
-    softDeletes,
-    timestamp
-} = require('@harnessflex/schema-builder')
+const { columns, id, foreign, string, longText, timestamps, softDeletes, timestamp } = require('@harnessflex/schema-builder')
 
 exports.up = function (db) {
-	return db.createTable('posts', columns([
-		id(),
+    return db.createTable('posts', columns([
+        id(),
         foreign('user_id').references('id').on('users').onDelete('cascade'),
         string('title'),
         longText('body'),
@@ -40,7 +31,7 @@ exports.up = function (db) {
         timestamp('published_at').nullable(),
         softDeletes(),
         timestamps(),
-	])
+    ])
 }
 ```
 
@@ -51,8 +42,8 @@ exports.up = function (db) {
 const { columns, id, foreign, string, longText, timestamps, softDeletes, timestamp } = require '@harnessflex/schema-builder'
 
 exports.up = do(db)
-	db.createTable 'posts', columns [
-		id!
+    db.createTable 'posts', columns [
+        id!
         foreign('user_id').references('id').on('users').onDelete 'cascade'
         string 'title'
         longText 'body'
@@ -60,7 +51,7 @@ exports.up = do(db)
         timestamp('published_at').nullable!
         softDeletes!
         timestamps!
-	]
+    ]
 ```
 
 Modifying Tables
@@ -218,7 +209,7 @@ return change( longText('api_key').nullable() )
 #### Imba
 
 ```js
-return change( longText('api_key').nullable! )
+change( longText('api_key').nullable! )
     .where('users')
     .using db
 ```
