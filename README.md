@@ -111,7 +111,7 @@ Column         | Params                      | Type            | Unique Constrai
 `text`         | `name: string`              | `Column`        | &#9744;
 `time`         | `name: string`              | `Column`        | &#9745;
 `timestamp`    | `name: string`              | `Column`        | &#9745;
-`timestamps`   | `currentTimeStamp: boolean` | `Object`        | &#9745;
+`timestamps`   | `currentTimeStamp: boolean` | `object`        | &#9745;
 
 <br/>
 
@@ -151,7 +151,7 @@ foreign('user_id').references('id').on('users').onDelete('cascade')
 
  Method         | Params                | Description
 :---------------|:----------------------|:-----------------------------
-`after`         | `string: column`      | Add column after another column.
+`after`         | `column: string`      | Add column after another column.
 `length`        | `length: integer`     | Set column length.
 `primary`       | `primary: boolean`    | Set column as primary key.
 `autoIncrement` | `increment: boolean`  | Add auto increment attribute.
@@ -192,9 +192,9 @@ db.createTable 'users', columns [
 
  Method         | Params                | Description
 :---------------|:----------------------|:-----------------------------
-`where`         | `string: table`       | Set table name.
-`whereTable`    | `string: table`       | Set table name.
-`using`         | `object: db`          | Add/change column and return db-migrate db instance.
+`where`         | `table: string`       | Set table name.
+`whereTable`    | `table: string`       | Set table name.
+`using`         | `db: object`          | Add/change column and return db-migrate db instance.
 
 <br/>
 
@@ -202,7 +202,7 @@ db.createTable 'users', columns [
 
 ```js
 return change( longText('api_key').nullable() )
-    .where('users')
+    .whereTable('users')
     .using(db)
 ```
 
@@ -210,7 +210,7 @@ return change( longText('api_key').nullable() )
 
 ```js
 change( longText('api_key').nullable! )
-    .where('users')
+    .whereTable('users')
     .using db
 ```
 
