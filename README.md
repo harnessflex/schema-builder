@@ -55,26 +55,26 @@ Columns
 
 Column         | Params                      | Type            | Unique Constraint Support
 :--------------|:----------------------------|-----------------|:--------------------
-`bigInteger`   | `name: string`              | `Column`        | - [x] supported
-`binary`       | `name: string`              | `Column`        | - [x] supported
-`blob`         | `name: string`              | `Column`        | - [ ] not supported
-`boolean`      | `name: string`              | `Column`        | - [x] supported
-`char`         | `name: string`              | `Column`        | - [x] supported
-`date`         | `name: string`              | `Column`        | - [x] supported
-`dateTime`     | `name: string`              | `Column`        | - [x] supported
-`decimal`      | `name: string`              | `Column`        | - [x] supported
-`foreign`      | `name: string`              | `ForeignColumn` | - [x] supported
-`id`           |                             | `Column`        | - [x] supported
-`integer`      | `name: string`              | `Column`        | - [x] supported
-`longText`     | `name: string`              | `Column`        | - [ ] not supported
-`real`         | `name: string`              | `Column`        | - [x] supported
-`smallInteger` | `name: string`              | `Column`        | - [x] supported
-`softDeletes`  |                             | `Column`        | - [x] supported
-`string`       | `name: string`              | `Column`        | - [x] supported
-`text`         | `name: string`              | `Column`        | - [ ] not supported
-`time`         | `name: string`              | `Column`        | - [x] supported
-`timestamp`    | `name: string`              | `Column`        | - [x] supported
-`timestamps`   | `currentTimeStamp: boolean` | `Object`        | - [x] supported
+`bigInteger`   | `name: string`              | `Column`        | &#9745;
+`binary`       | `name: string`              | `Column`        | &#9745;
+`blob`         | `name: string`              | `Column`        | &#9744;
+`boolean`      | `name: string`              | `Column`        | &#9745;
+`char`         | `name: string`              | `Column`        | &#9745;
+`date`         | `name: string`              | `Column`        | &#9745;
+`dateTime`     | `name: string`              | `Column`        | &#9745;
+`decimal`      | `name: string`              | `Column`        | &#9745;
+`foreign`      | `name: string`              | `ForeignColumn` | &#9745;
+`id`           |                             | `Column`        | &#9745;
+`integer`      | `name: string`              | `Column`        | &#9745;
+`longText`     | `name: string`              | `Column`        | &#9744;
+`real`         | `name: string`              | `Column`        | &#9745;
+`smallInteger` | `name: string`              | `Column`        | &#9745;
+`softDeletes`  |                             | `Column`        | &#9745;
+`string`       | `name: string`              | `Column`        | &#9745;
+`text`         | `name: string`              | `Column`        | &#9744;
+`time`         | `name: string`              | `Column`        | &#9745;
+`timestamp`    | `name: string`              | `Column`        | &#9745;
+`timestamps`   | `currentTimeStamp: boolean` | `Object`        | &#9745;
 
 <br/>
 
