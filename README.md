@@ -63,7 +63,7 @@ Column         | Params                      | Type            | Unique Constrai
 `date`         | `name: string`              | `Column`        | &#9745;
 `dateTime`     | `name: string`              | `Column`        | &#9745;
 `decimal`      | `name: string`              | `Column`        | &#9745;
-`foreign`      | `name: string`              | `ForeignColumn` | &#9745;
+`foreign`      | `name: string`              | `ForeignColumn` | &#9744;
 `id`           |                             | `Column`        | &#9745;
 `integer`      | `name: string`              | `Column`        | &#9745;
 `longText`     | `name: string`              | `Column`        | &#9744;
