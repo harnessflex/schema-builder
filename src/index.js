@@ -1,7 +1,10 @@
+const add = require('./add')
 const bigInteger = require('./defaults/bigInteger')
 const binary = require('./defaults/binary')
 const blob = require('./defaults/blob')
 const boolean = require('./defaults/boolean')
+const change = require('./change')
+const ChangeColumn = require('./ChangeColumn')
 const char = require('./defaults/char')
 const date = require('./defaults/date')
 const dateTime = require('./defaults/dateTime')
@@ -24,10 +27,13 @@ const columns = require('./columns')
 const ForeignColumn = require('./ForeignColumn')
 
 module.exports = {
+    add,
 	bigInteger,
 	binary,
 	blob,
 	boolean,
+    change,
+    ChangeColumn,
 	char,
 	Column,
 	columns,
