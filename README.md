@@ -14,31 +14,14 @@ npm i @harnessflex/schema-builder
 Basic Usage
 -----------
 
-Schema Builder works on both `imba` based projects and `JavaScript` based projects.
-
-### Harness Flex
-
-
-```js
-const { columns, foreign, id, longText, string, timestamps } = require '@harnessflex/schema-builder'
-
-exports.up = do(db, callback)
-	db.createTable 'blogs', columns [
-		id!
-		foreign('user_id').references('id').on('users').onDelete 'cascade'
-		foreign('category_id').references('id').on 'categories'
-		longText 'body'
-		string('tags').nullable!
-		timestamps!
-	], callback
-```
+Schema Builder works on both `JavaScript` based projects and `imba` based projects.
 
 ### JavaScript
 
 ```js
 const { columns, foreign, id, longText, string, timestamps } = require('@harnessflex/schema-builder')
 
-exports.up = function (db, callback) {
+exports.up = function (db) {
 	db.createTable('blogs', columns([
 		id(),
 		foreign('user_id').references('id').on('users').onDelete('cascade'),
@@ -46,8 +29,25 @@ exports.up = function (db, callback) {
 		longText('body'),
 		string('tags').nullable(),
 		timestamps(),
-	], callback)
+	])
 }
+```
+
+### Imba
+
+
+```js
+const { columns, foreign, id, longText, string, timestamps } = require '@harnessflex/schema-builder'
+
+exports.up = do(db)
+	db.createTable 'blogs', columns [
+		id!
+		foreign('user_id').references('id').on('users').onDelete 'cascade'
+		foreign('category_id').references('id').on 'categories'
+		longText 'body'
+		string('tags').nullable!
+		timestamps!
+	]
 ```
 
 Columns
@@ -102,7 +102,7 @@ API
 
 <br/>
 
-Imba and JavaScript
+JavaScript and Imba
 
 ```js
 foreign('user_id').references('id').on('users').onDelete('cascade')
@@ -122,20 +122,7 @@ foreign('user_id').references('id').on('users').onDelete('cascade')
 
 <br/>
 
-Imba 
-
-```js
-db.createTable 'users', columns [
-	id!
-	string 'name'
-	string('email').unique!
-	string 'password'
-	timestamp('email_verified_at').nullable!
-	timetamps!
-]
-```
-
-JavaScript
+#### JavaScript
 
 ```js
 db.createTable('users', columns([
@@ -148,7 +135,20 @@ db.createTable('users', columns([
 ]))
 ```
 
-Example
+#### Imba 
+
+```js
+db.createTable 'users', columns [
+	id!
+	string 'name'
+	string('email').unique!
+	string 'password'
+	timestamp('email_verified_at').nullable!
+	timetamps!
+]
+```
+
+Example (JavaScript)
 -------
 
 Before running the example project, edit the `database.json` config file located under the `example` folder.
