@@ -4,7 +4,6 @@ const binary = require('./defaults/binary')
 const blob = require('./defaults/blob')
 const boolean = require('./defaults/boolean')
 const change = require('./change')
-const ChangeColumn = require('./ChangeColumn')
 const char = require('./defaults/char')
 const date = require('./defaults/date')
 const dateTime = require('./defaults/dateTime')
@@ -22,9 +21,11 @@ const time = require('./defaults/time')
 const timestamp = require('./defaults/timestamp')
 const timestamps = require('./defaults/timestamps')
 
+const ChangeColumn = require('./ChangeColumn')
 const Column = require('./Column')
 const columns = require('./columns')
 const ForeignColumn = require('./ForeignColumn')
+const schema = require('./schema')
 
 module.exports = {
     add,
@@ -46,6 +47,7 @@ module.exports = {
 	integer,
 	longText,
 	real,
+    schema,
 	smallInteger,
     softDeletes,
 	string,
