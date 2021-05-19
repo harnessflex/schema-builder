@@ -66,7 +66,7 @@ const { string, add } = require('@harnessflex/schema-builder')
 
 exports.up = function (db) {
     return add( string('api_key').nullable().after('password') )
-        .where('users')
+        .whereTable('users')
         .using(db)
 };
 ```
@@ -80,7 +80,7 @@ const { change, longText } = require('@harnessflex/schema-builder')
 
 exports.up = function (db) {
     return change( longText('api_key').nullable() )
-        .where('users')
+        .whereTable('users')
         .using(db)
 };
 ```
@@ -122,6 +122,7 @@ Method    | Params                            | Description
 `add`     | `column: Column or ForeignColumn` | Add a new column to an existing table.
 `change`  | `column: Column or ForeignColumn` | Change a column in an existing table.
 `columns` | `columns: array`                  | A collection of columns.
+`schema`  | `columns: array`                  | A collection of columns.
 
 <br/>
 
