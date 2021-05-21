@@ -1,4 +1,5 @@
 const add = require('./add')
+const bigIncrements = require('./defaults/bigIncrements')
 const bigInteger = require('./defaults/bigInteger')
 const binary = require('./defaults/binary')
 const blob = require('./defaults/blob')
@@ -29,6 +30,7 @@ const schema = require('./schema')
 
 module.exports = {
     add,
+    bigIncrements,
 	bigInteger,
 	binary,
 	blob,
