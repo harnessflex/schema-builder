@@ -2,6 +2,10 @@
 
 A Laravel inspired schema builder for Harness Flex and DB Migrate.
 
+![Status](https://github.com/harnessflex/schema-builder/actions/workflows/test.yml/badge.svg)
+![npm](https://img.shields.io/npm/v/@harnessflex/schema-builder)
+![GitHub](https://img.shields.io/github/license/harnessflex/schema-builder)
+
 Install
 -------
 

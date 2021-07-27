@@ -4,6 +4,7 @@
     "description": "A Eloquent inspired schema builder for Harness Flex and DB Migrate.",
     "main": "src/index.js",
     "module": "src/index.js",
+    "types": "types/index.d.ts",
     "repository": "github:harnessflex/schema-builder",
     "keywords": [
         "harness",
@@ -19,7 +20,15 @@
         "src"
     ],
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "ts:build": "tsc",
+        "ts:watch": "tsc -w",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:cov": "jest --coverage"
+    },
+    "devDependencies": {
+        "jest": "^27.0.6",
+        "typescript": "^4.3.5"
     },
     "author": "Donald Pakkies <donaldpakkies@gmail.com>",
     "license": "MIT"
