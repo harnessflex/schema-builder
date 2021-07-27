@@ -94,28 +94,29 @@ exports.up = function (db) {
 Columns
 -------
 
-Column         | Params                      | Type            | Unique Constraint Support
-:--------------|:----------------------------|-----------------|:--------------------
-`bigInteger`   | `name: string`              | `Column`        | &#9745;
-`binary`       | `name: string`              | `Column`        | &#9745;
-`blob`         | `name: string`              | `Column`        | &#9744;
-`boolean`      | `name: string`              | `Column`        | &#9745;
-`char`         | `name: string`              | `Column`        | &#9745;
-`date`         | `name: string`              | `Column`        | &#9745;
-`dateTime`     | `name: string`              | `Column`        | &#9745;
-`decimal`      | `name: string`              | `Column`        | &#9745;
-`foreign`      | `name: string`              | `ForeignColumn` | &#9744;
-`id`           |                             | `Column`        | &#9745;
-`integer`      | `name: string`              | `Column`        | &#9745;
-`longText`     | `name: string`              | `Column`        | &#9744;
-`real`         | `name: string`              | `Column`        | &#9745;
-`smallInteger` | `name: string`              | `Column`        | &#9745;
-`softDeletes`  |                             | `Column`        | &#9745;
-`string`       | `name: string`              | `Column`        | &#9745;
-`text`         | `name: string`              | `Column`        | &#9744;
-`time`         | `name: string`              | `Column`        | &#9745;
-`timestamp`    | `name: string`              | `Column`        | &#9745;
-`timestamps`   | `currentTimeStamp: boolean` | `object`        | &#9745;
+Column          | Params                      | Type            | Unique Constraint Support
+:---------------|:----------------------------|-----------------|:--------------------
+`bigIncrements` | `name: string`              | `Column`        | &#9745;
+`bigInteger`    | `name: string`              | `Column`        | &#9745;
+`binary`        | `name: string`              | `Column`        | &#9745;
+`blob`          | `name: string`              | `Column`        | &#9744;
+`boolean`       | `name: string`              | `Column`        | &#9745;
+`char`          | `name: string`              | `Column`        | &#9745;
+`date`          | `name: string`              | `Column`        | &#9745;
+`dateTime`      | `name: string`              | `Column`        | &#9745;
+`decimal`       | `name: string`              | `Column`        | &#9745;
+`foreign`       | `name: string`              | `ForeignColumn` | &#9744;
+`id`            |                             | `Column`        | &#9745;
+`integer`       | `name: string`              | `Column`        | &#9745;
+`longText`      | `name: string`              | `Column`        | &#9744;
+`real`          | `name: string`              | `Column`        | &#9745;
+`smallInteger`  | `name: string`              | `Column`        | &#9745;
+`softDeletes`   |                             | `Column`        | &#9745;
+`string`        | `name: string`              | `Column`        | &#9745;
+`text`          | `name: string`              | `Column`        | &#9744;
+`time`          | `name: string`              | `Column`        | &#9745;
+`timestamp`     | `name: string`              | `Column`        | &#9745;
+`timestamps`    | `currentTimeStamp: boolean` | `object`        | &#9745;
 
 <br/>
 
