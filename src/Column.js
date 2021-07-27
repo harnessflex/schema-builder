@@ -1,5 +1,21 @@
+const isBoolean = require('./utils/isBoolean');
+const isNumber = require('./utils/isNumber');
+const isObject = require('./utils/isObject');
+const isString = require('./utils/isString');
 class Column {
 	constructor(name, type, object = {}) {
+        if (!isString(name)) {
+            throw new TypeError('name must be string');
+        }
+
+        if (!isString(type)) {
+            throw new TypeError('type must be string');
+        }
+
+        if (!isObject(object)) {
+            throw new TypeError('object must be object');
+        }
+
 		this.name = name
 
 		let def = {
@@ -27,6 +43,10 @@ class Column {
      * @returns {Column}
      */
     after(column) {
+        if (!isString(column)) {
+            throw new TypeError('column must be string');
+        }
+
         this.object.after = column
 
         return this
@@ -39,8 +59,8 @@ class Column {
 	 * @returns {Column}
 	 */
 	length(length) {
-		if (!Number.isInteger(length)) {
-			throw new Error(`${length} is invalid.`)
+		if (!isNumber(length)) {
+			throw new TypeError(`${length} is not a valid number`)
 		}
 
 		this.object.length = length
@@ -55,6 +75,10 @@ class Column {
 	 * @returns {Column}
 	 */
 	primary(primary = true) {
+        if (!isBoolean(primary)) {
+            throw new TypeError('primary must be boolean');
+        }
+
 		this.object.primaryKey = primary
 
 		return this
@@ -67,6 +91,10 @@ class Column {
 	 * @returns {Column}
 	 */
 	autoIncrement(increment = true) {
+        if (!isBoolean(increment)) {
+            throw new TypeError('increment must be boolean');
+        }
+
 		this.object.autoIncrement = increment
 
 		return this
@@ -79,6 +107,10 @@ class Column {
 	 * @returns {Column}
 	 */
 	nullable(nullable = false) {
+        if (!isBoolean(nullable)) {
+            throw new TypeError('nullable must be boolean');
+        }
+
 		this.object.notNull = nullable
 
 		return this
@@ -91,6 +123,10 @@ class Column {
 	 * @returns {Column}
 	 */
 	unique(isUnique = true) {
+        if (!isBoolean(isUnique)) {
+            throw new TypeError('isUnique must be boolean');
+        }
+
 		this.object.unique = isUnique
 
 		return this
@@ -103,6 +139,10 @@ class Column {
 	 * @returns {Column}
 	 */
 	unsigned(isUnsigned = true) {
+        if (!isBoolean(isUnsigned)) {
+            throw new TypeError('isUnsigned must be boolean');
+        }
+
 		this.object.unsigned = isUnsigned
 
 		return this
@@ -111,7 +151,7 @@ class Column {
 	/**
 	 * Set column default value.
 	 *
-	 * @param {Number|string} value
+	 * @param {Number|string|boolean} value
 	 * @returns {Column}
 	 */
 	default(value) {
