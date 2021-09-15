@@ -6,7 +6,7 @@ A Laravel inspired schema builder for Harness Flex and DB Migrate.
 ![npm](https://img.shields.io/npm/v/@harnessflex/schema-builder)
 ![GitHub](https://img.shields.io/github/license/harnessflex/schema-builder)
 
-Please project is no longer maintained. Please use the Formidablejs' [Schema Builder](https://github.com/formidablejs/schema-builder) instead.
+Please project is no longer maintained. Please use Formidablejs' [Schema Builder](https://github.com/formidablejs/schema-builder) instead.
 
 Install
 -------
